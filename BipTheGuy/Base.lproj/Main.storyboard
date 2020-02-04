@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,89 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="BipTheGuy" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PbX-mD-bPD">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Choose Image to Punch" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMa-Pn-toE">
+                                        <rect key="frame" x="103" y="427" width="209" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="209" id="gKf-b4-GMy"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Unknown" translatesAutoresizingMaskIntoConstraints="NO" id="PgA-fU-Waa">
+                                        <rect key="frame" x="8" y="8" width="398" height="411"/>
+                                        <gestureRecognizers/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="411" id="ljM-QH-Sh3"/>
+                                        </constraints>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="Rkq-8c-kaz" appends="YES" id="LVs-k4-rm9"/>
+                                        </connections>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="98" translatesAutoresizingMaskIntoConstraints="NO" id="63j-jU-qTa">
+                                        <rect key="frame" x="74" y="483.33333333333331" width="266" height="29.999999999999943"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="037-PM-VKE">
+                                                <rect key="frame" x="0.0" y="0.0" width="92" height="30"/>
+                                                <state key="normal" title="Photo Library"/>
+                                                <connections>
+                                                    <action selector="libraryPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="UeN-xS-afy"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qvk-vF-Zbh">
+                                                <rect key="frame" x="190" y="0.0" width="76" height="30"/>
+                                                <state key="normal" title="Take Photo"/>
+                                                <connections>
+                                                    <action selector="cameraPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="pW1-8b-vUz"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="PgA-fU-Waa" firstAttribute="trailing" secondItem="PbX-mD-bPD" secondAttribute="trailingMargin" id="4bu-4K-ENe"/>
+                                    <constraint firstItem="PgA-fU-Waa" firstAttribute="leading" secondItem="PbX-mD-bPD" secondAttribute="leadingMargin" id="BbK-MZ-Hl4"/>
+                                    <constraint firstItem="AMa-Pn-toE" firstAttribute="centerX" secondItem="63j-jU-qTa" secondAttribute="centerX" id="P8j-HK-P5X"/>
+                                    <constraint firstItem="AMa-Pn-toE" firstAttribute="top" secondItem="PgA-fU-Waa" secondAttribute="bottom" constant="8" id="Rgo-Yh-UkX"/>
+                                    <constraint firstItem="PgA-fU-Waa" firstAttribute="top" secondItem="PbX-mD-bPD" secondAttribute="topMargin" id="YGK-L9-yNO"/>
+                                    <constraint firstItem="PgA-fU-Waa" firstAttribute="centerX" secondItem="AMa-Pn-toE" secondAttribute="centerX" id="iHJ-5K-Foc"/>
+                                    <constraint firstItem="63j-jU-qTa" firstAttribute="top" secondItem="AMa-Pn-toE" secondAttribute="bottom" constant="36" id="yYf-wD-lXB"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="PbX-mD-bPD" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="6QD-Ux-xBR"/>
+                            <constraint firstItem="PbX-mD-bPD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="BUL-f1-CwI"/>
+                            <constraint firstItem="PbX-mD-bPD" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="az7-ws-KU1"/>
+                            <constraint firstItem="PbX-mD-bPD" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="i0o-0C-anl"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="imageToPunch" destination="PgA-fU-Waa" id="yVd-fQ-isj"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Rkq-8c-kaz">
+                    <connections>
+                        <action selector="imageTapped:" destination="BYZ-38-t0r" id="Rto-Rd-uqc"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
+            <point key="canvasLocation" x="137.68115942028987" y="98.641304347826093"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Unknown" width="273" height="185"/>
+    </resources>
 </document>
